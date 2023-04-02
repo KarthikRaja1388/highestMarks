@@ -15,9 +15,12 @@ btnAdd.addEventListener("click", (event) => {
     display.innerHTML = "Limit exceeded.You can enter maximum of only 5 marks";
   }
 });
-console.log(markArray);
 btnHighest.addEventListener("click", (event) => {
   event.preventDefault();
   const greatestValue = Math.max(...markArray);
-  display.innerHTML = "Highest Mark is" + greatestValue;
+  if (!markArray.length == 0) {
+    display.innerHTML = "Highest Mark is" + greatestValue;
+  } else {
+    display.innerHTML = "Please enter valid marks";
+  }
 });
